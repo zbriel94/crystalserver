@@ -81,7 +81,8 @@ function spell.onCastSpell(creature, var)
 	end
 
 	return success
-	]]--
+	]]
+	--
 end
 
 spell:group("attack")

@@ -104,9 +104,9 @@ local function executeChain(player, min, max, effectData)
 end
 
 local config = {
-	["energy"] = {effect = CONST_ME_YELLOW_ENERGYSHOCK, combat = COMBAT_ENERGYDAMAGE},
-	["earth"] = {effect = CONST_ME_GREEN_ENERGYSHOCK, combat = COMBAT_EARTHDAMAGE},
-	["physical"] = {effect = CONST_ME_WHITE_ENERGYSHOCK, combat = COMBAT_PHYSICALDAMAGE}
+	["energy"] = { effect = CONST_ME_YELLOW_ENERGYSHOCK, combat = COMBAT_ENERGYDAMAGE },
+	["earth"] = { effect = CONST_ME_GREEN_ENERGYSHOCK, combat = COMBAT_EARTHDAMAGE },
+	["physical"] = { effect = CONST_ME_WHITE_ENERGYSHOCK, combat = COMBAT_PHYSICALDAMAGE },
 }
 
 local function onGetFormulaValues(player, weaponDamage)
@@ -117,7 +117,8 @@ local function onGetFormulaValues(player, weaponDamage)
 	if helmetItem and helmetItem:getId() == 50274 then -- coned hat of enlightenment
 		basePower = math.floor(basePower * 1.06) -- 6%
 	end
-	]]--
+	]]
+	--
 
 	local skill = player:getSkillLevel(SKILL_FIRST)
 	local attackValue = calculateAttackValue(player, skill, weaponDamage)

@@ -1,7 +1,7 @@
 local spell = Spell("instant")
 
-local MENTOR_BUFF_DURATION = 60 * 1000 
-local AttrSubId_MentorOther = 3000 
+local MENTOR_BUFF_DURATION = 60 * 1000
+local AttrSubId_MentorOther = 3000
 
 function spell.onCastSpell(creature, variant)
 	local player = creature:getPlayer()

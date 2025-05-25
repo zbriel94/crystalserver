@@ -261,21 +261,21 @@ function dawnportVocationTrial.onStepIn(creature, item, position, fromPosition)
 		-- Center room position
 		--local centerPosition = Position(32065, 31891, 5)
 		--if centerPosition:getDistance(fromPosition) < centerPosition:getDistance(position) then
-			-- Blocks the vocation trial if same vocation or after level 20
-			if player:getVocation():getId() == trial.vocation.id or player:getLevel() >= 20 then
-				return true
-			end
-			-- On step in the tile
-			tileStep(player, trial)
-			-- Change to new vocation, convert magic level and skills and set proper stats
-			player:changeVocation(trial.vocation.id)
-			-- Remove vocation trial equipment items
-			removeItems(player)
-			-- Add player item
-			addItems(player, trial.items)
-			-- Change outfit
-			setOutfit(player, trial.vocation.outfit)
-			player:getPosition():sendMagicEffect(CONST_ME_BLOCKHIT)
+		-- Blocks the vocation trial if same vocation or after level 20
+		if player:getVocation():getId() == trial.vocation.id or player:getLevel() >= 20 then
+			return true
+		end
+		-- On step in the tile
+		tileStep(player, trial)
+		-- Change to new vocation, convert magic level and skills and set proper stats
+		player:changeVocation(trial.vocation.id)
+		-- Remove vocation trial equipment items
+		removeItems(player)
+		-- Add player item
+		addItems(player, trial.items)
+		-- Change outfit
+		setOutfit(player, trial.vocation.outfit)
+		player:getPosition():sendMagicEffect(CONST_ME_BLOCKHIT)
 		--	return true
 		--end
 	end

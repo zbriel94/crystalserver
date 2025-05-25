@@ -2,7 +2,7 @@
 
 local creaturesArray = {}
 
-local function creatureArrayListChain(startCreature, maxTargets)	
+local function creatureArrayListChain(startCreature, maxTargets)
 	local currentCreature = Creature(startCreature)
 	if not currentCreature then
 		return false
@@ -65,7 +65,7 @@ local function executeChain(player, min, max, effectData, grade)
 	if #creaturesArray == 0 then
 		return false
 	end
-	
+
 	local oldCreature = player
 	for _, targetId in ipairs(creaturesArray) do
 		local newCreature = Creature(targetId)
@@ -97,14 +97,14 @@ local function executeChain(player, min, max, effectData, grade)
 end
 
 local config = {
-	["energy"] = {effect = CONST_ME_YELLOW_ENERGYSHOCK, combat = COMBAT_ENERGYDAMAGE},
-	["earth"] = {effect = CONST_ME_GREEN_ENERGYSHOCK, combat = COMBAT_EARTHDAMAGE},
-	["physical"] = {effect = CONST_ME_WHITE_ENERGYSHOCK, combat = COMBAT_PHYSICALDAMAGE}
+	["energy"] = { effect = CONST_ME_YELLOW_ENERGYSHOCK, combat = COMBAT_ENERGYDAMAGE },
+	["earth"] = { effect = CONST_ME_GREEN_ENERGYSHOCK, combat = COMBAT_EARTHDAMAGE },
+	["physical"] = { effect = CONST_ME_WHITE_ENERGYSHOCK, combat = COMBAT_PHYSICALDAMAGE },
 }
 
 local function onGetFormulaValues(player, weaponDamage)
 	local basePower = 42
-	
+
 	local skill = player:getSkillLevel(SKILL_FIRST)
 	local attackValue = calculateAttackValue(player, skill, weaponDamage)
 
@@ -172,7 +172,6 @@ function spell.onCastSpell(creature, var)
 	local condition = Condition(CONDITION_SPELLCOOLDOWN, CONDITIONID_DEFAULT, 295)
 	condition:setTicks((cooldown * 1000) / configManager.getFloat(configKeys.RATE_SPELL_COOLDOWN))
 	creature:addCondition(condition)
-
 
 	return true
 end

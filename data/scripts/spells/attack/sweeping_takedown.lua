@@ -94,10 +94,10 @@ function spell.onCastSpell(creature, var)
 			end
 		end
 	end
-	
+
 	combat1:execute(creature, var)
 	combat2:execute(creature, var)
-	
+
 	return true
 end
 
