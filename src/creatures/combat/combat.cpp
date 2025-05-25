@@ -107,7 +107,6 @@ static void applyImproveMonkAttackSpender(const std::shared_ptr<Player> &player,
 	damage.secondary.value = static_cast<int32_t>(damage.secondary.value * multiplier);
 }
 
-
 CombatDamage Combat::getCombatDamage(const std::shared_ptr<Creature> &creature, const std::shared_ptr<Creature> &target) const {
 	CombatDamage damage;
 	damage.origin = params.origin;

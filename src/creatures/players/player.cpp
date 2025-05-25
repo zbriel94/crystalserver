@@ -5649,7 +5649,7 @@ void Player::updateDamageReductionFromItemAbility(
 		if (elementReduction != 0) {
 			combatReductionArray[combatTypeIndex] = calculateDamageReduction(combatReductionArray[combatTypeIndex], elementReduction);
 		}
-		
+
 		const int16_t mantraElementReduction = itemType.abilities->mantraAbsorbValue[combatTypeIndex];
 		if (mantraElementReduction != 0) {
 			const int16_t mantraAbsorbPercent = getMantraAbsorbPercent(mantraElementReduction);
@@ -11542,7 +11542,6 @@ bool Player::isFirstOnStack() const {
 	return this == bottomPlayer.get();
 }
 
-
 void Player::sendHarmonyProtocol() const {
 	if (client) {
 		client->sendHarmonyProtocol(m_harmony);
@@ -11584,7 +11583,7 @@ void Player::setSerene(const bool isSerene) {
 	}
 	m_serene = isSerene;
 	sendSereneProtocol();
-	
+
 	if (getVirtue() == VIRTUE_JUSTICE) {
 		sendSkills();
 	}
@@ -11624,9 +11623,9 @@ void Player::setVirtue(const VirtueMonk_t virtueEnum) {
 			m_virtue = VIRTUE_NONE;
 			break;
 	}
-	
+
 	sendVirtueProtocol();
-	
+
 	if (m_virtue != VIRTUE_NONE) {
 		sendSkills();
 	}
@@ -11635,8 +11634,8 @@ void Player::setVirtue(const VirtueMonk_t virtueEnum) {
 uint16_t Player::getMantraTotal() const {
 	int32_t mantra = 0;
 	static constexpr Slots_t mantraSlots[] = { CONST_SLOT_HEAD, CONST_SLOT_NECKLACE, CONST_SLOT_ARMOR, CONST_SLOT_LEGS, CONST_SLOT_RING };
-	for (const Slots_t& slot : mantraSlots) {
-		const auto& inventoryItem = inventory[slot];
+	for (const Slots_t &slot : mantraSlots) {
+		const auto &inventoryItem = inventory[slot];
 		if (inventoryItem) {
 			const ItemType &itemType = Item::items[inventoryItem->getID()];
 			if (itemType.mantra > 0) {
@@ -11653,14 +11652,14 @@ int16_t Player::getMantraAbsorbPercent(int16_t mantraAbsorbValue) const {
 	if (m_party) {
 		for (const auto &partyMember : m_party->getMembers()) {
 			if (partyMember && partyMember->getMantraTotal() < mantraAbsorbValue) {
-				if (partyMember->wheel()->getInstant(WheelInstant_t::GUIDING_PRESENCE) ) {
+				if (partyMember->wheel()->getInstant(WheelInstant_t::GUIDING_PRESENCE)) {
 					mantraAbsorbValue = partyMember->getMantraTotal();
 				}
 			}
 		}
 
 		if (m_party->getLeader() && m_party->getLeader()->getMantraTotal() < mantraAbsorbValue) {
-			if (m_party->getLeader()->wheel()->getInstant(WheelInstant_t::GUIDING_PRESENCE) ) {
+			if (m_party->getLeader()->wheel()->getInstant(WheelInstant_t::GUIDING_PRESENCE)) {
 				mantraAbsorbValue = m_party->getLeader()->getMantraTotal();
 			}
 		}

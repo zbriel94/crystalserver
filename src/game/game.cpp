@@ -7222,7 +7222,6 @@ static void applyImproveMonkHealing(CombatDamage &damage, const std::shared_ptr<
 		const uint8_t virtueSustainBonusPercent = (player->isSerene() ? 70 : 35);
 		const float multiplier = 1.0f + (virtueSustainBonusPercent / 100.0f);
 
-
 		damage.primary.value = static_cast<int32_t>(damage.primary.value * multiplier);
 	}
 }

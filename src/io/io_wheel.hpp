@@ -281,7 +281,7 @@ private:
 	 * @param vocationId The vocation ID to be checked.
 	 * @return true if the vocation ID corresponds to a monk, false otherwise.
 	 */
-	 bool isMonk(uint8_t vocationId) const;
+	bool isMonk(uint8_t vocationId) const;
 
 	/**
 	 * @brief Adds a spell to the player's bonus data if the number of points is equal to the player's points in the specified slot type.

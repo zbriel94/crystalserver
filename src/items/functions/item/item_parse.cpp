@@ -1283,8 +1283,8 @@ void ItemParse::parseUnscriptedItems(std::string_view stringValue, pugi::xml_nod
 	}
 }
 
-void ItemParse::parseElementalBond(const std::string& stringValue, pugi::xml_attribute valueAttribute, ItemType& itemType) {
-    if (stringValue == "elementalbond") {
+void ItemParse::parseElementalBond(const std::string &stringValue, pugi::xml_attribute valueAttribute, ItemType &itemType) {
+	if (stringValue == "elementalbond") {
 		Abilities &abilities = itemType.getAbilities();
 		const std::string &elementalBond = valueAttribute.value();
 		if (elementalBond == "energy") {
@@ -1309,4 +1309,3 @@ void ItemParse::parseMantra(const std::string &stringValue, pugi::xml_attribute 
 		itemType.mantra = value;
 	}
 }
-

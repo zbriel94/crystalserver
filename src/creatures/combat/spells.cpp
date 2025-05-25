@@ -840,7 +840,7 @@ void Spell::postCastSpell(const std::shared_ptr<Player> &player, uint32_t manaCo
 			player->changeSoul(-static_cast<int32_t>(soulCost));
 		}
 	}
-	
+
 	if (harmonyCost) {
 		player->setHarmony(0);
 	}

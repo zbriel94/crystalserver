@@ -3243,7 +3243,8 @@ std::string Item::getDescription(const ItemType &it, int32_t lookDistance, const
 	if (!it.elementalBond.empty() && it.isWeapon()) {
 		std::string bond = it.elementalBond;
 		capitalizeWords(bond);
-		s << std::endl << "Elemental Bond: " << bond;
+		s << std::endl
+		  << "Elemental Bond: " << bond;
 	}
 
 	if (item) {

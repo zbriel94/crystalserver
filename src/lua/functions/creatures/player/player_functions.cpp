@@ -5174,7 +5174,7 @@ int PlayerFunctions::luaPlayerSetSereneCooldown(lua_State* L) {
 
 int PlayerFunctions::luaPlayerGetVirtue(lua_State* L) {
 	// player:getVirtue()
-		const auto &player = Lua::getUserdataShared<Player>(L, 1);
+	const auto &player = Lua::getUserdataShared<Player>(L, 1);
 	if (!player) {
 		Lua::reportErrorFunc(Lua::getErrorDesc(LUA_ERROR_PLAYER_NOT_FOUND));
 		lua_pushnil(L);
@@ -5187,7 +5187,7 @@ int PlayerFunctions::luaPlayerGetVirtue(lua_State* L) {
 
 int PlayerFunctions::luaPlayerSetVirtue(lua_State* L) {
 	// player:setVirtue(virtueType)
-		const auto &player = Lua::getUserdataShared<Player>(L, 1);
+	const auto &player = Lua::getUserdataShared<Player>(L, 1);
 	if (!player) {
 		Lua::reportErrorFunc(Lua::getErrorDesc(LUA_ERROR_PLAYER_NOT_FOUND));
 		lua_pushnil(L);
