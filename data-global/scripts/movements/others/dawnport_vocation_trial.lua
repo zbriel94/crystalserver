@@ -259,8 +259,8 @@ function dawnportVocationTrial.onStepIn(creature, item, position, fromPosition)
 	local trial = vocationTrials[item.actionid]
 	if trial then
 		-- Center room position
-		local centerPosition = Position(32065, 31891, 5)
-		if centerPosition:getDistance(fromPosition) < centerPosition:getDistance(position) then
+		--local centerPosition = Position(32065, 31891, 5)
+		--if centerPosition:getDistance(fromPosition) < centerPosition:getDistance(position) then
 			-- Blocks the vocation trial if same vocation or after level 20
 			if player:getVocation():getId() == trial.vocation.id or player:getLevel() >= 20 then
 				return true
@@ -276,8 +276,8 @@ function dawnportVocationTrial.onStepIn(creature, item, position, fromPosition)
 			-- Change outfit
 			setOutfit(player, trial.vocation.outfit)
 			player:getPosition():sendMagicEffect(CONST_ME_BLOCKHIT)
-			return true
-		end
+		--	return true
+		--end
 	end
 	return true
 end

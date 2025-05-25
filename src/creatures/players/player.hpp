@@ -1384,6 +1384,24 @@ public:
 
 	void addDeflectCondition(std::string source, ConditionType_t conditionType, uint8_t chance);
 
+	// Monk udpate
+	void sendHarmonyProtocol() const;
+	uint8_t getHarmony() const;
+	void setHarmony(const uint8_t harmonyValue);
+	void addHarmony(const uint8_t harmonyValue);
+	void removeHarmony(const uint8_t harmonyValue);
+	void sendSereneProtocol() const;
+	bool isSerene() const;
+	void setSerene(const bool isSerene);
+	uint64_t getSereneCooldown();
+	void setSereneCooldown(const uint64_t addTime);
+	void sendVirtueProtocol() const;
+	void setVirtue(const VirtueMonk_t virtue);
+	VirtueMonk_t getVirtue() const;
+	uint16_t getMantraTotal() const;
+
+	std::unordered_map<uint16_t, uint8_t> spellActivedAimMap;
+
 private:
 	friend class PlayerLock;
 	std::mutex mutex;
@@ -1710,7 +1728,12 @@ private:
 
 	void triggerMomentum();
 	void clearCooldowns();
-	void triggerTranscendance();
+	void triggerTranscendence();
+
+	uint8_t m_harmony = 0;
+	bool m_serene = false;
+	uint64_t m_serene_cooldown = 0;
+	VirtueMonk_t m_virtue = VIRTUE_NONE;
 
 	friend class Game;
 	friend class SaveManager;
@@ -1776,4 +1799,6 @@ private:
 	// unequipping the armor does not influence the boot's imbuement.
 	// When present simultaneously, the one with the greatest chance of occurrence will prevail.
 	std::vector<DeflectCondition> deflectConditions;
+
+	int16_t getMantraAbsorbPercent(int16_t mantraAbsorbValue) const;
 };

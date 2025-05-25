@@ -99,8 +99,11 @@ enum class WheelStage_t : uint8_t {
 	AVATAR_OF_STEEL = 10,
 	AVATAR_OF_STORM = 11,
 	DIVINE_GRENADE = 12,
+	AVATAR_OF_BALANCE = 13,
+	SPIRITUAL_OUTBURST = 14,
+	ASCETIC = 15,
 
-	STAGE_COUNT = 13
+	STAGE_COUNT = 16
 };
 
 enum class WheelOnThink_t : uint8_t {
@@ -113,8 +116,11 @@ enum class WheelOnThink_t : uint8_t {
 	DIVINE_EMPOWERMENT = 6,
 	AVATAR_SPELL = 7,
 	AVATAR_FORGE = 8,
+	SANCTUARY = 9,
+	ASCETIC = 10,
+	SPIRITUAL_OUTBURST = 11,
 
-	TOTAL_COUNT = 9
+	TOTAL_COUNT = 12
 };
 
 enum class WheelStat_t : uint8_t {
@@ -161,8 +167,10 @@ enum class WheelInstant_t : uint8_t {
 	HEALING_LINK = 4,
 	RUNIC_MASTERY = 5,
 	FOCUS_MASTERY = 6,
+	GUIDING_PRESENCE = 7,
+	SANCTUARY = 8,
 
-	INSTANT_COUNT = 7
+	INSTANT_COUNT = 9
 };
 
 enum class WheelAvatarSkill_t : uint8_t {
@@ -214,6 +222,7 @@ struct PlayerWheelMethodsBonusData {
 		int melee = 0;
 		int distance = 0;
 		int magic = 0;
+		int fist = 0;
 	};
 
 	// value * 100. Example: 1% == 100
@@ -230,6 +239,8 @@ struct PlayerWheelMethodsBonusData {
 		bool healingLink = false; // Druid
 		bool runicMastery = false; // Druid/sorcerer
 		bool focusMastery = false; // Sorcerer
+		bool guidingPresence = false; // Monk
+		bool sanctuary = false; // Monk
 	};
 
 	struct Stages {
@@ -242,6 +253,8 @@ struct PlayerWheelMethodsBonusData {
 		int beamMastery = 0; // Sorcerer
 		int twinBurst = 0; // Druid
 		int executionersThrow = 0; // Knight
+		int spiritualOutburst = 0; // Monk
+		int ascetic = 0; // Monk
 	};
 
 	struct Avatar {
@@ -249,6 +262,7 @@ struct PlayerWheelMethodsBonusData {
 		int nature = 0; // Druid
 		int steel = 0; // Knight
 		int storm = 0; // Sorcerer
+		int balance = 0; // Monk
 	};
 
 	// Initialize structs

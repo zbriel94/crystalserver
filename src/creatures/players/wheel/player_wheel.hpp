@@ -432,6 +432,11 @@ public:
 
 	WheelGemBasicModifier_t selectBasicModifier2(WheelGemBasicModifier_t modifier1) const;
 
+	bool hasMonkQuest() const;
+	int32_t checkRevelationPerkAscetic() const;
+	float checkRevelationPerkSanctuary() const;
+	bool setSanctuaryTimer(const std::string &spell);
+
 private:
 	void resetRevelationState();
 	void processActiveGems();
@@ -475,4 +480,6 @@ private:
 	std::array<PlayerWheelGem, 4> m_activeGems;
 	std::vector<PlayerWheelGem> m_revealedGems;
 	std::vector<PlayerWheelGem> m_destroyedGems;
+
+	float m_harmonySanctuary = 1.0f;
 };
