@@ -6077,6 +6077,10 @@ void Player::onAddCombatCondition(ConditionType_t type) {
 			sendTextMessage(MESSAGE_FAILURE, "You are poisoned.");
 			break;
 
+		case CONDITION_AGONY:
+			sendTextMessage(MESSAGE_FAILURE, "You are agonyed.");
+			break;
+
 		case CONDITION_DROWN:
 			sendTextMessage(MESSAGE_FAILURE, "You are drowning.");
 			break;
@@ -11163,6 +11167,7 @@ bool Player::hasPermittedConditionInPZ() const {
 		CONDITION_ENERGY,
 		CONDITION_FIRE,
 		CONDITION_POISON,
+		CONDITION_AGONY,
 		CONDITION_BLEEDING,
 		CONDITION_CURSED,
 		CONDITION_DAZZLED
