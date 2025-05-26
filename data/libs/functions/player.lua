@@ -923,6 +923,7 @@ local emojiMap = {
 	["paladin"] = ":bow_and_arrow:",
 	["druid"] = ":herb:",
 	["sorcerer"] = ":crystal_ball:",
+	["monk"] = ":punch:",
 }
 
 function Player.getMarkdownLink(self)

@@ -4,9 +4,9 @@ combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_MAGIC_BLUE)
 combat:setParameter(COMBAT_PARAM_DISPEL, CONDITION_PARALYZE)
 combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 
-function onGetFormulaValues(player, level, magicLevel) -- already compared to the official tibia | compared date: 05/07/19(m/d/y)
-	local min = (level * 0.2 + magicLevel * 1.4) + 8
-	local max = (level * 0.2 + magicLevel * 1.795) + 11
+function onGetFormulaValues(player, level, magicLevel)
+	local min = ((level * 0.2 + magicLevel * 12) + 75)
+	local max = ((level * 0.2 + magicLevel * 20) + 125)
 	return min, max
 end
 
@@ -18,17 +18,18 @@ function spell.onCastSpell(creature, variant)
 	return combat:execute(creature, variant)
 end
 
-spell:name("Light Healing")
-spell:words("exura")
+spell:name("Spirit Mend")
+spell:words("exura gran tio")
 spell:group("healing")
-spell:vocation("druid;true", "elder druid;true", "paladin;true", "royal paladin;true", "sorcerer;true", "master sorcerer;true", "monk;true", "exalted monk;true")
-spell:castSound(SOUND_EFFECT_TYPE_SPELL_LIGHT_HEALING)
-spell:id(1)
+spell:vocation("monk;true", "exalted monk;true")
+spell:castSound(SOUND_EFFECT_TYPE_SPELL_SPIRIT_MEND)
+spell:id(273)
 spell:cooldown(1000)
 spell:groupCooldown(1000)
-spell:level(8)
-spell:mana(20)
+spell:level(80)
+spell:mana(210)
 spell:isSelfTarget(true)
 spell:isAggressive(false)
+spell:isPremium(true)
 spell:needLearn(false)
 spell:register()
