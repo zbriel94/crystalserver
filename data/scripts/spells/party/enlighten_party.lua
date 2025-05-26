@@ -6,7 +6,7 @@ local condition = Condition(CONDITION_REGENERATION)
 condition:setParameter(CONDITION_PARAM_SUBID, 3)
 condition:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
 condition:setParameter(CONDITION_PARAM_TICKS, 5 * 60 * 1000)
-condition:setParameter(CONDITION_PARAM_MANAGAIN, 5) 
+condition:setParameter(CONDITION_PARAM_MANAGAIN, 5)
 condition:setParameter(CONDITION_PARAM_MANATICKS, 2000)
 
 local spell = Spell("instant")

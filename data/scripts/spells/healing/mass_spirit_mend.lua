@@ -3,7 +3,7 @@ local function targetFunction(creature, target)
 	if not player then
 		return
 	end
-	
+
 	local min = math.floor(((player:getLevel() / 5) + (player:getMagicLevel() * 5.7) + 26))
 	local max = math.floor(((player:getLevel() / 5) + (player:getMagicLevel() * 10.43) + 62))
 
@@ -29,17 +29,15 @@ local function targetFunction(creature, target)
 		"rift fragment",
 	}
 	local damageMechanicCreatures = {
-		"leiden"
+		"leiden",
 	}
-	
+
 	if target:isPlayer() and target:getName():lower() ~= excludeCreature then
 		target:addHealth(healAmount)
 		target:getPosition():sendMagicEffect(CONST_ME_HEAL)
-
 	elseif target:isMonster() and table.contains(damageMechanicCreatures, target:getName():lower()) and target:getName():lower() ~= excludeCreature then
 		target:addHealth(healAmount)
 		target:getPosition():sendMagicEffect(CONST_ME_NEGATIVE_HEAL)
-
 	elseif target:isMonster() and table.contains(bosses, target:getName():lower()) and target:getName():lower() ~= excludeCreature then
 		target:addHealth(healAmount)
 		target:getPosition():sendMagicEffect(CONST_ME_HEAL)
