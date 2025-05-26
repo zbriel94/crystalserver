@@ -38,6 +38,7 @@
 #include "lua/creature/events.hpp"
 #include "map/spectators.hpp"
 #include "creatures/players/player.hpp"
+#include "utils/tools.hpp"
 
 int32_t Combat::getLevelFormula(const std::shared_ptr<Player> &player, const std::shared_ptr<Spell> &wheelSpell, const CombatDamage &damage) const {
 	if (!player) {
@@ -57,14 +58,6 @@ int32_t Combat::getLevelFormula(const std::shared_ptr<Player> &player, const std
 	int32_t levelFormula = player->getLevel() * 2 + (player->getMagicLevel() + player->getSpecializedMagicLevel(damage.primary.type, true)) * 3;
 	return levelFormula;
 }
-
-static const std::unordered_set<std::string_view> harmonySpells = {
-	"Devastating Knockout",
-	"Greater Tiger Clash",
-	"Spiritual Outburst",
-	"Sweeping Takedown",
-	"Tiger Clash"
-};
 
 static void applyImproveMonkAttackSpender(const std::shared_ptr<Player> &player, CombatDamage &damage) {
 	if (!player) {

@@ -29,6 +29,8 @@
 #include "absl/debugging/symbolize.h"
 
 #include <boost/locale.hpp>
+#include <unordered_set>
+#include <string_view>
 
 void printXMLError(const std::string &where, const std::string &fileName, const pugi::xml_parse_result &result) {
 	g_logger().error("[{}] Failed to load {}: {}", where, fileName, result.description());
@@ -2156,3 +2158,12 @@ uint8_t calculateMaxPvpReduction(uint8_t blessCount, bool isPromoted /* = false*
 std::string convertToUTF8(const std::string &input) {
 	return boost::locale::conv::to_utf<char>(input, "ISO-8859-1");
 }
+
+const std::unordered_set<std::string_view> harmonySpells = {
+	"Devastating Knockout",
+	"Greater Tiger Clash",
+	"Mass Spirit Mend",
+	"Spiritual Outburst",
+	"Sweeping Takedown",
+	"Tiger Clash"
+};

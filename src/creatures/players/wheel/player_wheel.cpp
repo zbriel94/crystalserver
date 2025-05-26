@@ -32,6 +32,7 @@
 #include "kv/kv_definitions.hpp"
 #include "server/network/message/networkmessage.hpp"
 #include "server/network/protocol/protocolgame.hpp"
+#include "utils/tools.hpp"
 
 static PlayerWheelGem emptyGem = {};
 
@@ -4038,15 +4039,6 @@ float PlayerWheel::checkRevelationPerkSanctuary() const {
 	}
 	return 1.0f;
 }
-
-static const std::unordered_set<std::string_view> harmonySpells = {
-	"Devastating Knockout",
-	"Greater Tiger Clash",
-	"Mass Spirit Mend",
-	"Spiritual Outburst",
-	"Sweeping Takedown",
-	"Tiger Clash"
-};
 
 bool PlayerWheel::setSanctuaryTimer(const std::string &spell) {
 	if (getOnThinkTimer(WheelOnThink_t::SANCTUARY) >= OTSYS_TIME()) {
