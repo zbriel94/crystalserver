@@ -302,6 +302,9 @@ Storage = {
 		Lever = 52278,
 		Mainland = 52279,
 		Monk = 52280,
+		MonkHealthPotion = 52281,
+		MonkManaPotion = 52282,
+		MonkMeat = 52283,
 	},
 	GraveDanger = {
 		-- Reserved storage from 52310 - 52339
