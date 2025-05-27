@@ -301,6 +301,7 @@ Storage = {
 		MessageStair = 52277,
 		Lever = 52278,
 		Mainland = 52279,
+		Monk = 52280,
 	},
 	GraveDanger = {
 		-- Reserved storage from 52310 - 52339
