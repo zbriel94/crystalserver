@@ -245,7 +245,7 @@ private:
 	 * @details It assigns names and specific grades of effects to each spell.
 	 * @note Make sure to call this function before using monk spells.
 	 */
-	 void initializeMonkSpells();
+	void initializeMonkSpells();
 
 	/**
 	 * @brief Checks if the number of points is equal to the player's points in the specified slot type.

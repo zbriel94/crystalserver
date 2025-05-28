@@ -3259,8 +3259,7 @@ void PlayerWheel::onThink(bool force /* = false*/) {
 		m_player.sendMagicEffect(m_player.getPosition(), 260);
 	}
 
-	if (!m_player.hasCondition(CONDITION_INFIGHT) || m_player.getZoneType() == ZONE_PROTECTION || (!getInstant(WheelInstant_t::BATTLE_INSTINCT) && !getInstant(WheelInstant_t::POSITIONAL_TACTICS) && !getInstant(WheelInstant_t::BALLISTIC_MASTERY) && !getInstant("Gift of Life") && !getInstant("Combat Mastery") && !getInstant("Divine Empowerment") && getGiftOfCooldown() == 0 && !getInstant("Ascetic")))
-	{
+	if (!m_player.hasCondition(CONDITION_INFIGHT) || m_player.getZoneType() == ZONE_PROTECTION || (!getInstant(WheelInstant_t::BATTLE_INSTINCT) && !getInstant(WheelInstant_t::POSITIONAL_TACTICS) && !getInstant(WheelInstant_t::BALLISTIC_MASTERY) && !getInstant("Gift of Life") && !getInstant("Combat Mastery") && !getInstant("Divine Empowerment") && getGiftOfCooldown() == 0 && !getInstant("Ascetic"))) {
 		bool mustReset = false;
 		for (int i = 0; i < static_cast<int>(WheelMajor_t::TOTAL_COUNT); i++) {
 			if (getMajorStat(static_cast<WheelMajor_t>(i)) != 0) {

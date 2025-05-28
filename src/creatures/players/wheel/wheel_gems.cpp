@@ -564,7 +564,7 @@ void WheelModifierContext::addStrategies(WheelGemSupremeModifier_t modifier, uin
 			bonus.increase.heal = 5 * gradeMultiplier;
 			m_strategies.emplace_back(std::make_unique<GemModifierSpellBonusStrategy>(m_wheel, "Mass Healing", bonus));
 			break;
-			
+
 		// Monk
 		case WheelGemSupremeModifier_t::Monk_AvatarOfBalance_Cooldown:
 			bonus.decrease.cooldown = 900 * 1000;
@@ -641,7 +641,7 @@ void WheelModifierContext::addStrategies(WheelGemSupremeModifier_t modifier, uin
 			m_strategies.emplace_back(std::make_unique<GemModifierRevelationStrategy>(m_wheel, WheelGemAffinity_t::Blue, 150 * gradeMultiplier));
 			m_wheel.addRevelationBonus(WheelGemAffinity_t::Blue, 150 * gradeMultiplier);
 			break;
-			
+
 		default:
 			g_logger().error("WheelModifierContext::setStrategy: Invalid supreme modifier: {}", static_cast<uint8_t>(modifier));
 	}
