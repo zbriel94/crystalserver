@@ -77234,6 +77234,12 @@ Granted by TibiaGoals.com" />
 		<attribute key="primarytype" value="creature products" />
 		<attribute key="weight" value="30" />
 	</item>
+	<item id="46625" article="a" name="lesser fragment">
+		<attribute key="weight" value="5"/>
+	</item>
+	<item id="46626" article="a" name="greater fragment">
+		<attribute key="weight" value="500"/>
+	</item>
 	<item id="46627" article="a" name="crusher">
 		<attribute key="loottype" value="tools" />
 		<attribute key="showCharges" value="1" />
@@ -82937,6 +82943,10 @@ Granted by TibiaGoals.com" />
 	<item fromid="50082" toid="50085" name="stairs">
 		<attribute key="primarytype" value="dropdowns" />
 		<attribute key="floorchange" value="down" />
+	</item>
+	<item id="50096" article="a" name="ticket forge">
+		<attribute key="duration" value="20"/>
+		<attribute key="containersize" value="20"/>
 	</item>
 	<item id="50101" article="a" name="bloodstained scythe">
 		<attribute key="primarytype" value="creature products" />
